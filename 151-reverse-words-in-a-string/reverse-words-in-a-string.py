@@ -1,15 +1,10 @@
 class Solution:
     def reverseWords(self, s: str) -> str:
-        s = s.strip()
-        words = s.split()
+        clean_str = s.split()
+        rev_str = clean_str[::-1]
 
-        ptr1, ptr2 = 0, len(words) - 1
+        result = " ".join(rev_str)
 
-        while ptr1 < ptr2:
-            words[ptr1], words[ptr2] = words[ptr2], words[ptr1]
-            ptr1 += 1
-            ptr2 -= 1
+        return result
+
         
-        return " ".join(words)
-
-
